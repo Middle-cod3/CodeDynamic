@@ -1,0 +1,46 @@
+At first install EXPRESS/HBS/MONGOOSE/NODEMON/BOOTSTRAP/JQUERY. While installing you can set a versio npmi bootstrap@4.5.1
+*-*-*-*-*-
+Then require express and set it in a function. in app.js->
+*-*-*-**-*-*
+Create a connection in db->conn.js/require mongoose and established connection with database.
+*-*-*-*-*-*-*
+Then create templates/partials,views.
+*-*-*---*-**-*-*-*
+setting up BOOTSTRAP and JQUERY=methods is
+app.use css/js/jq || before that we are require path bcz its joining.
+Then in index.hbs file link those 3 link:
+<link rel="stylesheet" href="../css/bootstrap.min.css"> ==>>This in a head 
+<script src="../jq/jquery.js" type="text/javascript"></script> ====> this 2 in  a body section.
+<script src="../js/bootstrap.js" type="text/javascript"></script> ====> this 2 in  a body section.
+
+*-*-**-*-**-*-*-*
+Then routing the index page and create a server and port .
+*-*-*-*-**-*-*-*-*
+Then we are telling express that we are using hbs view engine:
+app.set("view engine", "hbs");
+*-*-*-*-*-**-*
+We remove the views directry from the parent so we have to give them a file location like:
+const templatepath=path.join(__dirname,"../templates/views");
+then set it: app.set("views",templatepath);
+
+*-*-*-*-*-*-*-*-*
+partials->For navbar header like that :it use for include but it also removed from the parent directory so we have to give them a path
+const partialspath=path.join(__dirname,"../templates/partials");
+for set require hbs and register it: hbs.registerPartials(partialspath);
+*-*-*-*-*-*-*-*-*-*
+we use public static file to use css in a partials pages:app.use(express.static(staticpath));
+*-*-**--**--**
+Then create a partials pages andinclude it in a index page
+*-*-*--*-
+Now in model->usermessage.js Defining Schema.
+Create Collection then export it.
+Then require it in a app.js.
+then try post method routing .
+then get the input data using :    res.send(req.body);
+but express dont know which type it is so we habe to define it: app.use(express.urlencoded({extended:false}));
+Then get the data in a  UserData variable and save it then render it in a index page.
+*-**--*-*-*-*-*-**
+
+
+
+ 
